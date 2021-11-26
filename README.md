@@ -7,20 +7,22 @@ Custom Toast
 ```sh
 npm install react-native-custom-native-toast
 ```
+or
+
+```sh
+yarn add react-native-custom-native-toast
+```
 
 ## Usage
 
 ```js
-import { multiply } from "react-native-custom-native-toast";
+import  { multiply, show } from 'react-native-custom-native-toast';
 
-// ...
-
-const result = await multiply(3, 7);
+ multiply(3, 7).then((res) => {
+      console.log("res--multiply->", res);
+      show(`Hello Custom Package is working for me and multiply method also ${res}`)
+ })
 ```
-
-## Contributing
-
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
 
 ## License
 
