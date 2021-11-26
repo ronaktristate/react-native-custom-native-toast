@@ -9,14 +9,18 @@ const LINKING_ERROR =
 const CustomNativeToast = NativeModules.CustomNativeToast
   ? NativeModules.CustomNativeToast
   : new Proxy(
-      {},
-      {
-        get() {
-          throw new Error(LINKING_ERROR);
-        },
-      }
-    );
+    {},
+    {
+      get() {
+        throw new Error(LINKING_ERROR);
+      },
+    }
+  );
 
 export function multiply(a: number, b: number): Promise<number> {
   return CustomNativeToast.multiply(a, b);
+}
+
+export function show(text: string): Promise<void> {
+  return CustomNativeToast.show(text)
 }
