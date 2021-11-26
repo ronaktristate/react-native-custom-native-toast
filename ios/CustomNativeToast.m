@@ -1,7 +1,14 @@
+#import <Foundation/Foundation.h>
+
 #import "CustomNativeToast.h"
 #import "IOSNativeToast.h"
 
 @implementation CustomNativeToast
+
+@property (nonatomic, retain) IOSNativeToast *toast;
+
+@end
+
 
 RCT_EXPORT_MODULE()
 
