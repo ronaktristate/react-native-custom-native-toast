@@ -1,6 +1,8 @@
 package com.reactnativecustomnativetoast;
 
 import androidx.annotation.NonNull;
+import android.content.Context;
+import android.widget.Toast;
 
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -31,4 +33,10 @@ public class CustomNativeToastModule extends ReactContextBaseJavaModule {
     }
 
     public static native int nativeMultiply(int a, int b);
+
+    @ReactMethod
+    public void show(String text) {
+        Context context = getReactApplicationContext();
+        Toast.makeText(context,text, Toast.LENGTH_LONG).show();
+    }
 }
